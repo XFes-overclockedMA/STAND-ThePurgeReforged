@@ -1,0 +1,277 @@
+------------------------------------------------------------------------------------------------------------------------------
+--                                                                                                                          --
+--Version:                                                                                                                  --
+--0.1                                                                                                                       --
+--Build Date:                                                                                                               --
+--12/04/23                                                                                                                  --
+-----powered By = разогнанный = OverclockedMA                                                                               --
+------------------------------------------------------------------------------------------------------------------------------
+--THE PURGE V3.9<3                                                                                                          --
+-- Welcome on my CODE                                                                                                       --  
+-- This OPEN SOURCE PROVIDED YOU MENTION ME IN YOUR PROJECTS                                                                --  
+--> Thanks :) <3                                                                                                            --
+------------------------------------------------------------------------------------------------------------------------------
+
+
+util.keep_running() 
+util.require_natives("natives-1676318796")
+
+-----------------------------------------------------------------------------------------------------------------------------------
+---------------RESOURCES PURGE
+local header_path = filesystem.resources_dir() .. '#xfes-lib-theme\\purgemenu\\Header.png'
+local header = directx.create_texture(header_path)
+-----------------------------------------------------------------------------------------------
+---------------CHECK FILE PURGE
+if not io.exists(header_path) then
+    util.toast('[ThePurge] ThePurge Header.png not found!')
+    util.stop_script()
+end
+
+-----------------------------------------------------------------------------------------------
+---------------NOTIFY LAUNCH SVT.PLUTO
+util.toast("Hi, " .. players.get_name(players.user()) .. "! \nWelcome To ThePurge V3.9 Reforged - Theme")
+-----------------------------------------------------------------------------------------------
+---------------SPLASH SCREEN REPERTORY
+HC_DIR = filesystem.resources_dir() .. "#xfes-lib-theme\\purgemenu\\"
+
+svtloading = {
+    Img = HC_DIR .. "loading\\",
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- LOAD SPLASH IMG
+function SHOW_IMG(img_name, max_passed_time) ----------------------------------------------Credit goes to LanceScript Reloaded (THANKS, LanceScript Team :) <3 )
+    if filesystem.exists(svtloading.Img .. img_name) then
+        local ImgAlpha = 0
+        local IncreasedImgAlpha = 0.01
+        util.create_tick_handler(function()
+            ImgAlpha = ImgAlpha + IncreasedImgAlpha
+            if ImgAlpha > 1 then
+                ImgAlpha = 1
+            elseif ImgAlpha < 0 then 
+                ImgAlpha = 0
+                return false
+            end
+        end)
+        local Img = directx.create_texture(svtloading.Img .. img_name)
+        local StartedTime = os.clock()
+        util.create_tick_handler(function()
+            directx.draw_texture(Img, 0.07, 0.07, 0.5, 0.5, 0.5, 0.5, 0, 1, 1, 1, ImgAlpha)
+            local PassedTime = os.clock() - StartedTime
+            if PassedTime > max_passed_time then
+                IncreasedImgAlpha = -0.01
+            end
+            if ImgAlpha == 0 then
+                return false
+            end
+        end)
+    end
+end
+if SCRIPT_MANUAL_START and not SCRIPT_SILENT_START then
+    SHOW_IMG("purgeload.png", 3.0)
+    GRAPHICS.ANIMPOSTFX_PLAY("FocusOut", 0, 0)
+end
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- LOAD XBOX AC
+function SHOW_IMG(img_name, max_passed_time) -- Credit goes to LanceScript Reloaded
+    if filesystem.exists(svtloading.Img .. img_name) then
+        local ImgAlpha = 0
+        local IncreasedImgAlpha = 0.01
+        util.create_tick_handler(function()
+            ImgAlpha = ImgAlpha + IncreasedImgAlpha
+            if ImgAlpha > 1 then
+                ImgAlpha = 1
+            elseif ImgAlpha < 0 then 
+                ImgAlpha = 0
+                return false
+            end
+        end)
+
+        local Img = directx.create_texture(svtloading.Img .. img_name)
+        local StartedTime = os.clock()
+        util.create_tick_handler(function()
+            directx.draw_texture(Img, 0.07, 0.05, 1.5, 4.8, 0.5, 0.5, 0, 1, 1, 1, ImgAlpha)
+            local PassedTime = os.clock() - StartedTime
+            if PassedTime > max_passed_time then
+                IncreasedImgAlpha = -0.01
+            end
+            if ImgAlpha == 0 then
+                return false
+            end
+        end)
+    end
+end
+if SCRIPT_MANUAL_START and not SCRIPT_SILENT_START then
+    SHOW_IMG("loadachivement.png", 3.0)
+    
+end
+-----------------------------------------------------------------------------------------------------------------------------------
+---------------PROFILE STAND 
+menu.trigger_commands("reloadtextures")
+menu.trigger_commands("reloadfont")
+----------------------------------------------HEADER
+menu.trigger_commands("header hide")
+----------------------------------------------ADRESS BAR
+menu.trigger_commands("addressbar off")
+----------------------------------------------TABS
+menu.trigger_commands("tabs off")
+menu.trigger_commands("tabswidth 69")
+menu.trigger_commands("tabsheight 25")
+menu.trigger_commands("tabsposition top")
+menu.trigger_commands("tabstextscale 11")
+menu.trigger_commands("tabstextxoffset 15")
+menu.trigger_commands("tabstextyoffset 8")
+menu.trigger_commands("tabsalignment left")
+menu.trigger_commands("tabsname off")
+menu.trigger_commands("tabslefticon on")
+menu.trigger_commands("tabsrighticon off")
+----------------------------------------------SCROLLBAR 
+----------------------------------------------SCROLLBAR DISABLED MANUALY BEACEAUSE COMMAND NOT FOUND... 
+menu.trigger_commands("scrollbar 10")
+----------------------------------------------COMMAND INFO TEXT
+menu.trigger_commands("showhelptext off")
+menu.trigger_commands("showsyntax off")
+menu.trigger_commands("commandinfotextposition bottom")
+menu.trigger_commands("showsliderbehaviour off")
+menu.trigger_commands("shownonuseronly off")
+----------------------------------------------APPEARANCE MAIN 
+menu.trigger_commands("spacersize 10")
+menu.trigger_commands("blur 0")
+menu.trigger_commands("smoothscroll 0")
+menu.trigger_commands("listwidth 483")
+menu.trigger_commands("listheight 35")
+menu.trigger_commands("menuheight 24")
+----------------------------------------------PRIMARY COLOR
+menu.trigger_commands("backgroundopacity 0")
+menu.trigger_commands("primary #e80000")
+----------------------------------------------POSITION
+menu.trigger_commands("menux 1350")
+menu.trigger_commands("menuy 132")
+----------------------------------------------COMMANDS
+menu.trigger_commands("commandtextscale 26")
+menu.trigger_commands("commandtextxoffset -2")
+menu.trigger_commands("commandtextyoffset -3")
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- DIVIDER HEADER
+menu.divider(menu.my_root(), ("The Purge V3.9 - Setting"))
+menu.divider(menu.my_root(), ("---------------Header RGB - Color---------------"))
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- STRING COLOR HEADER
+rect_colour = {
+	["r"] = 248 / 255,
+	["g"] = 0 / 255,
+	["b"] = 4 / 255,
+	["a"] = 1.0
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- MENU CUSTOM PURGE COLOR HEADER
+c = menu.colour(menu.my_root(), "Purge Header Custom Color", {"purgedxrectheader"}, "Customize the color of the theme to have a menu that looks like you.", rect_colour, true, function(colour)
+	rect_colour = colour
+end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- RESET RGB MOD HEADER
+menu.action(menu.my_root(), "RESET for RGB mod", {}, "How to use: Press the button to take advantage of the RGB mod below (!Only if you have the ORIGINAL ThePurgeV3.9 COLOR!) !! Note: If after the **RESET for RGB MOD** the colors does not scroll, unload Stand.", function()
+    util.toast("[ThePurgeV3.9] - RESET Header for RGB mod applied.")
+    menu.trigger_commands("purgedxrectheaderblue 255")
+end)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- RAINBOW BTN HEADER
+menu.rainbow(c)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- STRING COLOR Background
+rect_colourB= {
+	["r"] = 0 / 255,
+	["g"] = 0 / 255,
+	["b"] = 0 / 255,
+	["a"] = 0.865
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- Background DIVIDER
+
+menu.divider(menu.my_root(), ("-------------Background RGB - Color-------------"))
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- MENU CUSTOM PURGE COLOR Background
+f = menu.colour(menu.my_root(), "Purge Background Custom Color", {"purgedxrectBackground"}, "Customize the color of the theme to have a menu that looks like you.", rect_colourB, true, function(colour)
+	rect_colourB = colour
+end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- RESET RGB MOD Background
+menu.action(menu.my_root(), "RESET for RGB mod", {}, "How to use: Press the button to take advantage of the RGB mod below (!Only if you have the ORIGINAL ThePurgeV3.9 COLOR!) !! Note: If after the **RESET for RGB MOD** the colors does not scroll, unload Stand.", function()
+    util.toast("[ThePurgeV3.9] - RESET Background for RGB mod applied.")
+    menu.trigger_commands("purgedxrectBackgroundblue 255")
+end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- RAINBOW BTN Background
+menu.rainbow(f)
+-----------------------------------------------------------------------------------------------------------------------------------
+---------------DIVIDER STAND SETTING
+menu.divider(menu.my_root(), ("-----------------Stand - Setting-----------------"))
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- SEARCH MOUSE SETTINGS
+menu.action(menu.my_root(), "Mouse Support ", {}, "Shortcut to the settings for the Mouse Support.", function(on_click)
+    menu.trigger_commands("search Mouse Support")
+ end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- SEARCH CURSOR SETTING
+menu.action(menu.my_root(), "Cursor Bar Setting", {}, "Shortcut to the settings for the overlay.", function(on_click)
+    util.toast("[ThePurgeV3.9] - Stand>Settings>Appearance and colors>Primary.")
+    menu.focus(menu.ref_by_path("Stand>Settings>Appearance"), function() end)
+end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- DIVIDER RESET OPTION
+
+menu.divider(menu.my_root(), ("---------------Reset---------------"))
+-----------------------------------------------------------------------------------------------------------------------
+--------------- RESET COLOR PURGE BTN
+menu.action(menu.my_root(), "ThePurgeV3.9 Orignal Color", {}, "Reset color to have the original color.", function()
+    util.toast("[ThePurgeV3.9] - Original color well applied.")
+	menu.trigger_commands("purgedxrectheaderrainbow 0")
+	menu.trigger_commands("purgedxrectBackgroundrainbow 0")
+	menu.trigger_commands("rainbow 0")
+	menu.trigger_commands("primary #e80000")
+    menu.trigger_commands("purgedxrectheaderopacity 248")
+    menu.trigger_commands("purgedxrectheaderred 248")
+    menu.trigger_commands("purgedxrectheadergreen 0")
+    menu.trigger_commands("purgedxrectheaderblue 4")
+    menu.trigger_commands("purgedxrectBackgroundopacity 220")
+    menu.trigger_commands("purgedxrectBackgroundred 0")
+    menu.trigger_commands("purgedxrectBackgroundgreen 0")
+    menu.trigger_commands("purgedxrectBackgroundblue 0")
+
+end)
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- DIVISER Background
+HC_VERSION = "V0.1"
+menu.divider(menu.my_root(), ("-------------------------------------------"))
+menu.divider(menu.my_root(), ("By XFes-OverclockedMA") .. " " .. HC_VERSION)
+menu.divider(menu.my_root(), ("Original Purge in Xbox By Stelio<3"))
+-----------------------------------------------------------------------------------------------------------------------------------
+--------------- DRAW TEXTURE
+while true do
+	if menu.is_open() then
+		x, y, w, h = menu.get_main_view_position_and_size()
+----------------------------------------------BACKGROUND
+directx.draw_rect(
+x,-- x
+y - (25 / 1080),-- y
+w,-- width
+862 / 1080,-- height
+rect_colourB-- colour
+)    
+----------------------------------------------BACK HEADER
+directx.draw_rect(
+x,-- x
+y - (65 / 1080),-- y
+w,-- width
+65 / 1080,-- height
+rect_colour	-- colour
+)
+  
+----------------------------------------------PURGE TITLE 
+		directx.draw_texture(header, 1, (66 / 1080) / 2, 0, 0, x , y - 66 / 1080, 0, 1, 1, 1, 1)
+	
+	end
+	util.yield()
+end
+
+

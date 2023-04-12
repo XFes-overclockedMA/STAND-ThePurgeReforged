@@ -1,0 +1,18 @@
+💎->STEP 1 :Drop .PLUTO in the :  \AppData\Roaming\Stand\Lua Scripts
+
+🚧🚧🚧🚧🚧🚧🚧
+🐍-->STEP 2 : Drop #jtag-rgh folder in the \AppData\Roaming\Stand\Lua Scripts\resources 
+->⚠️⚠️ If the #jtag-rgh folder is already present in your folders then drop purgemenu in:   \AppData\Roaming\Stand\Lua Scripts\resources\#jtag-rgh folder ⚠️⚠️
+
+🚧🚧🚧🚧🚧🚧🚧
+🐉--->STEP 3 : Drop natives-1676318796.lua in \AppData\Roaming\Stand\Lua Scripts\lib
+
+🚧🚧🚧🚧🚧🚧🚧
+🦖---->STEP 4 : Drop file in theme folder in : \AppData\Roaming\Stand\Theme
+
+🚧🚧🚧🚧🚧🚧🚧
+✨----->STEP 5: Enjoy your theme ☀️
+
+🚧🚧🚧🚧🚧🚧🚧
+Optional:
+-> To add tags refer to the addon file. ✅
