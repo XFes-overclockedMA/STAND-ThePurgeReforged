@@ -1,5 +1,5 @@
 # STAND-ThePurgeReforged
-This The Purge V3.9 REFORGED THEME for STAND 🔥 Powered by : разогнанный = OverclockedMA / @разогнанный#9036 ✅
+This The Purge REFORGED THEME for STAND 🔥 Powered by : разогнанный = OverclockedMA / @разогнанный#9036 ✅
 
 ![logo](https://user-images.githubusercontent.com/130534944/231574502-8575f7f7-378d-461a-87e8-e66d36524e23.png)
 
